@@ -16,6 +16,12 @@ function Review () {
     setIndex( index - 1)
   }
 
+  const randomPerson = () => {
+    const randomNumber = Math.floor(Math.random() * people.length);
+    if(randomNumber === index ) return setIndex(randomNumber + 1);
+    setIndex(randomNumber);
+  }
+
   return (
     <article className="review">
       <div className="img-container">
@@ -27,16 +33,16 @@ function Review () {
       <h4 className="author">{ name }</h4>
       <p className="job">{ job }</p>
       <p className="info">{ text }</p>
-      <div className="button-container">
+      <div>
         <button className="prev-btn" onClick={ prevPerson }>
           <FaChevronLeft />
         </button>
-        <button className="next-btn"  onClick={ nextPerson }>
+        <button className="next-btn" onClick={ nextPerson }>
           <FaChevronRight />
         </button>
       </div>
-      <button className="random-btn">
-        surprise me
+      <button className="random-btn" onClick={ randomPerson }>
+        Surprise Me
       </button>
     </article>
   );
