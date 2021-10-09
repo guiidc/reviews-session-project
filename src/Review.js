@@ -33,7 +33,7 @@ function Review () {
       <h4 className="author">{ name }</h4>
       <p className="job">{ job }</p>
       <p className="info">{ text }</p>
-      <div className="button-container">
+      <div>
         <button className="prev-btn" onClick={ prevPerson }>
           <FaChevronLeft />
         </button>
@@ -42,7 +42,7 @@ function Review () {
         </button>
       </div>
       <button className="random-btn" onClick={ randomPerson }>
-        surprise me
+        Surprise Me
       </button>
     </article>
   );
